@@ -9,6 +9,22 @@ Next you can update your site name, avatar and other options using the _config.y
 
 The easiest way to make your first post is to edit this one. Go into /_posts/ and update the Hello World markdown file. For more instructions head over to the [Jekyll Now repository](https://github.com/barryclark/jekyll-now) on GitHub.
 
-<!-- Adds an empty comment section to the page -->
+<!-- Threaded comments -->
 {% responses %}
+  {% response author="Steve" email="steve@nourish.je" date="2016-11-23 16:08:32" param="value" %}
+    This is a comment
+    {% responses %}
+      {% response author="Steve" email="steve@nourish.je" date="2016-11-23 16:08:32" param="value" %}
+        This is a reply
+        {% responses %}
+          {% response author="Steve" email="steve@nourish.je" date="2016-11-23 16:08:32" param="value" %}
+            You can nest them as deep as you like
+          {% endreponse %}
+        {% endresponses %}
+      {% endresponse %}
+      {% response author="Steve" email="steve@nourish.je" date="2016-11-23 16:08:32" param="value" %}
+        A second reply to the top comment
+      {% endresponse %}
+    {% endresponses %}
+  {% endresponse %}
 {% endresponses %}
